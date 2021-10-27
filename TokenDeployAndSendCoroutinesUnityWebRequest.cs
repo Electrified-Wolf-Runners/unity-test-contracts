@@ -92,18 +92,18 @@ public class TokenDeployAndSendCoroutinesUnityWebRequest : MonoBehaviour {
     void Start () {
 
         Debug.Log("Starting TokenDeployAndSendCoroutinesUnityWebRequest example");
-        StartCoroutine(DeployAndTransferToken());
+        // StartCoroutine(DeployAndTransferToken()); //UNCOMMENT THIS FOR IT TO WORK
     }
 
 
     //Sample of new features / requests
     public IEnumerator DeployAndTransferToken()
     {
-        var url = "http://localhost:8545";
-        var privateKey = "0xb5b1870957d373ef0eeffecc6e4812c0fd08f554b37b233526acc331bf1544f7";
-        var account = "0x12890d2cce102216644c59daE5baed380d84830c";
+        var url = "https://kovan.infura.io/v3/e0f9e0acea7f4e2a90edba953bbf1277";
+        var privateKey = "c566b17567c731f2889ac7fe772d00d4f66e25ca00ae00152cd99bbe4bd0a3c6";
+        var account = "0xbd53Ef09C8e5C31004d57E7D297f221C08560FF1";
         //initialising the transaction request sender
-        var transactionRequest = new TransactionSignedUnityRequest(url, privateKey, 444444444500);
+        var transactionRequest = new TransactionSignedUnityRequest(url, privateKey, 42);
         transactionRequest.UseLegacyAsDefault = true;
 
 
@@ -145,7 +145,7 @@ public class TokenDeployAndSendCoroutinesUnityWebRequest : MonoBehaviour {
         Debug.Log(dtoResult.Balance);
 
 
-        var transactionTransferRequest = new TransactionSignedUnityRequest(url, privateKey, 444444444500);
+        var transactionTransferRequest = new TransactionSignedUnityRequest(url, privateKey, 42);
         transactionTransferRequest.UseLegacyAsDefault = true;
 
         var newAddress = "0xde0B295669a9FD93d5F28D9Ec85E40f4cb697BAe";
