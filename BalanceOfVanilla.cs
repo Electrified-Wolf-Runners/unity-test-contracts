@@ -1,5 +1,4 @@
 // New lines added below
-using ABI.Contracts.fusez.ContractDefinition;
 using Debug = UnityEngine.Debug;
 using System;
 using System.Collections;
@@ -13,7 +12,7 @@ using UnityEngine.UI;
 using Nethereum.Contracts;
 using Nethereum.Web3;
 
-public class MintCaroutine : MonoBehaviour
+public class BalanceOfVanilla : MonoBehaviour
 {
     private static bool TrustCertificate(object sender, X509Certificate x509Certificate, X509Chain x509Chain, SslPolicyErrors sslPolicyErrors)
     {
@@ -24,8 +23,6 @@ public class MintCaroutine : MonoBehaviour
     public string Url = "https://mainnet.infura.io";
     // public string UrlFull = "https://mainnet.infura.io/v3/7238211010344719ad14a89db874158c";
 
-    public InputField ResultBlockNumber;
-    public InputField InputUrl;
 
     //New variables added below
     private string url = "https://kovan.infura.io/v3/e0f9e0acea7f4e2a90edba953bbf1277";
@@ -36,7 +33,6 @@ public class MintCaroutine : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        InputUrl.text = Url;
     }
 
     public async void GetBalance()
